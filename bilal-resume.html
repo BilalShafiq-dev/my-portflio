@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilal Shafiq — CV</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: letter;
+        margin: 0.55in 0.6in;
+      }
+
+      :root {
+        --teal: #00786c;
+        --text: #111111;
+        --muted: #222222;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.45;
+        color: var(--text);
+        background: #e8ecef;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .toolbar {
+        max-width: 8.5in;
+        margin: 0 auto 0.75rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .toolbar button,
+      .toolbar a {
+        font-family: inherit;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        background: #fff;
+        color: var(--text);
+      }
+
+      .toolbar button.primary,
+      .toolbar a.primary {
+        background: var(--teal);
+        color: #fff;
+        border-color: var(--teal);
+      }
+
+      .page {
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0 auto 1.25rem;
+        background: #fff;
+        padding: 0.55in 0.6in;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      .page:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .name {
+        font-size: 18pt;
+        font-weight: 600;
+        color: var(--teal);
+        line-height: 1.15;
+        margin-bottom: 0.15rem;
+      }
+
+      .contact-line,
+      .contact-line a {
+        font-size: 10pt;
+        font-weight: 300;
+        color: var(--text);
+        text-decoration: none;
+        line-height: 1.5;
+      }
+
+      .contact-line .sep {
+        margin: 0 0.2rem;
+        font-weight: 300;
+      }
+
+      .headline {
+        font-size: 11pt;
+        font-weight: 600;
+        margin-top: 0.55rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .summary {
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.45;
+        margin-bottom: 0.65rem;
+      }
+
+      .section {
+        margin-top: 0.55rem;
+      }
+
+      .section-title {
+        font-size: 10pt;
+        font-weight: 200;
+        letter-spacing: 0.02em;
+        color: var(--teal);
+        text-transform: uppercase;
+        margin-bottom: 0.35rem;
+      }
+
+      .row-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+      }
+
+      .row-top .left,
+      .row-top .right {
+        font-size: 11pt;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .row-top .right {
+        font-size: 10pt;
+        white-space: nowrap;
+      }
+
+      .role-title {
+        font-size: 11pt;
+        font-weight: 600;
+        margin-bottom: 0.08rem;
+      }
+
+      .entry {
+        margin-bottom: 0.42rem;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .bullets {
+        list-style: none;
+        margin: 0.05rem 0 0 0;
+        padding: 0;
+      }
+
+      .bullets li {
+        position: relative;
+        padding-left: 0.95rem;
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.42;
+        margin-bottom: 0.12rem;
+      }
+
+      .bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 12pt;
+        line-height: 1.2;
+      }
+
+      .edu-sub,
+      .cert-sub {
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+
+      .edu-sub .sep,
+      .cert-sub .sep {
+        margin: 0 0.2rem;
+      }
+
+      .cert-sub a {
+        color: var(--teal);
+        text-decoration: none;
+      }
+
+      .cert-sub a:hover {
+        text-decoration: underline;
+      }
+
+      .cert-row {
+        margin-bottom: 0.28rem;
+      }
+
+      .cert-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .project {
+        margin-bottom: 0.38rem;
+      }
+
+      .project:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-title {
+        font-size: 11pt;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .project-desc {
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.42;
+      }
+
+      .skills-block {
+        margin-top: 0.15rem;
+      }
+
+      .skill-line {
+        font-size: 10pt;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 0.08rem;
+      }
+
+      .skill-line strong {
+        font-weight: 600;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+
+        .toolbar {
+          display: none;
+        }
+
+        .page {
+          width: auto;
+          min-height: auto;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          page-break-after: always;
+        }
+
+        .page:last-of-type {
+          page-break-after: auto;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 0.5rem;
+        }
+
+        .page {
+          width: 100%;
+          min-height: auto;
+          padding: 1.25rem 1rem;
+        }
+
+        .row-top {
+          flex-direction: column;
+          gap: 0.1rem;
+        }
+
+        .row-top .right {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button type="button" class="primary" onclick="window.print()">
+        Download CV (PDF)
+      </button>
+      <a href="index.html">← Portfolio</a>
+    </div>
+
+    <!-- PAGE 1 -->
+    <main class="page">
+      <div class="name">Bilal Shafiq</div>
+      <div class="contact-line">
+        Lahore<span class="sep">·</span>03126027308<span class="sep">·</span
+        ><a href="mailto:bilalshafiq8899@gmail.com">bilalshafiq8899@gmail.com</a
+        ><span class="sep">·</span
+        ><a href="https://linkedin.com/in/bilal-shafiq2">linkedin.com/in/bilal-shafiq2</a>
+      </div>
+      <div class="contact-line">
+        <a href="https://github.com/BilalShafiq-dev">https://github.com/BilalShafiq-dev</a>
+      </div>
+
+      <div class="headline">Software Engineer</div>
+      <p class="summary">
+        Full Stack Developer with 1 year of professional experience building scalable web
+        applications and AI-powered systems. Experienced at CoalDev across React, Next.js, FastAPI,
+        RAG systems and n8n automation. Adaptable across diverse tech stacks with a focus on clean,
+        production-ready code.
+      </p>
+
+      <section class="section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="entry">
+          <div class="row-top">
+            <span class="left">CoalDev</span>
+            <span class="right">07/2025 – 05/2026</span>
+          </div>
+          <div class="role-title">Full Stack Developer</div>
+          <ul class="bullets">
+            <li>
+              Built internal Project Management Tool — task tracking, team dashboards, and progress
+              reporting using React &amp; FastAPI
+            </li>
+            <li>
+              Implemented RAG (Retrieval-Augmented Generation) systems for AI-powered document
+              Q&amp;A and chatbots
+            </li>
+            <li>
+              Worked across React, Next.js, FastAPI stacks adapting to project needs; built n8n
+              automation workflows
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="row-top">
+            <span class="left">Devsarch</span>
+            <span class="right">01/2025 – 03/2025</span>
+          </div>
+          <div class="role-title">Web Development Intern</div>
+          <ul class="bullets">
+            <li>
+              Developed responsive web interfaces and frontend components; hands-on experience with
+              HTML, CSS, JavaScript
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="row-top">
+            <span class="left">DirAction</span>
+            <span class="right">09/2024 – 11/2024</span>
+          </div>
+          <div class="role-title">Coding Interview Trainer</div>
+          <ul class="bullets">
+            <li>
+              Taught problem-solving strategies, algorithm design, brute force techniques and solution
+              optimization
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="entry">
+          <div class="role-title">Bachelor of Computer Science</div>
+          <div class="edu-sub">
+            Superior University · GPA: 3.53/4.0<span class="sep">·</span>Lahore<span class="sep">·</span
+            >01/2020 – 09/2024
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="role-title">Intermediate ICS</div>
+          <div class="edu-sub">
+            Superior College Renala Khurd<span class="sep">·</span>01/2018 – 12/2020
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="cert-row">
+          <div class="row-top">
+            <span class="left">Python Project for Data Science</span>
+            <span class="right">06/2023</span>
+          </div>
+          <div class="cert-sub">
+            IBM · Coursera ·
+            <a
+              href="https://www.coursera.org/account/accomplishments/certificate/Y24EHFYSUQQW"
+              target="_blank"
+              rel="noopener"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+
+        <div class="cert-row">
+          <div class="row-top">
+            <span class="left">Python for Data Science, AI &amp; Development</span>
+            <span class="right">06/2023</span>
+          </div>
+          <div class="cert-sub">
+            IBM · Coursera ·
+            <a
+              href="https://www.coursera.org/account/accomplishments/certificate/RPPRH2TGLQWJ"
+              target="_blank"
+              rel="noopener"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+
+        <div class="cert-row">
+          <div class="row-top">
+            <span class="left">SQL</span>
+            <span class="right">02/2022</span>
+          </div>
+          <div class="cert-sub">
+            SoloLearn ·
+            <a
+              href="https://www.sololearn.com/certificates/CT-QRTD2LQX"
+              target="_blank"
+              rel="noopener"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project">
+          <div class="project-title">Multi-Agent Forex Trading Bot</div>
+          <p class="project-desc">
+            Built a multi-agent AI system using LangGraph for automated forex trading — agents handle
+            market analysis, signal generation, and trade execution
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAGE 2 -->
+    <main class="page">
+      <div class="project" style="margin-top: 0">
+        <div class="project-title">Project Management Tool</div>
+        <p class="project-desc">
+          Internal tool for CoalDev — kanban boards, task assignments, team roles, and real-time
+          progress tracking
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">RAG System — AI Document Search</div>
+        <p class="project-desc">
+          Built RAG pipeline for intelligent document Q&amp;A with vector embeddings and semantic
+          search
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">n8n Workflow Automation</div>
+        <p class="project-desc">
+          Automated multi-service workflows, reducing manual processes and improving team efficiency
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Vehicle Showroom Web App</div>
+        <p class="project-desc">
+          Feature-rich vehicle buying/selling platform with admin dashboard and user-friendly
+          interface
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Emotion-Based Music Recommendation</div>
+        <p class="project-desc">
+          Detects user emotion via webcam and recommends music in real time using web APIs
+        </p>
+      </div>
+
+      <section class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-block">
+          <p class="skill-line">
+            <strong>Frontend:</strong> CSS3, HTML5, JavaScript, Next.js, React.js, Tailwind CSS,
+            TypeScript
+          </p>
+          <p class="skill-line">
+            <strong>Backend:</strong> FastAPI, Node.js, Python, REST APIs
+          </p>
+          <p class="skill-line">
+            <strong>Databases:</strong> MongoDB, MySQL, PostgreSQL, Redis, Supabase
+          </p>
+          <p class="skill-line">
+            <strong>AI/Automation:</strong> LangChain, LangGraph, n8n Workflow Automation, NumPy,
+            OpenCV, Pandas, RAG Systems
+          </p>
+          <p class="skill-line"><strong>Tools:</strong> CI/CD, Git, GitHub, Postman</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
